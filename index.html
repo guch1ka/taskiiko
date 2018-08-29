@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js test</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</head>
+<body>
+    <section>
+        <div id="tasks-area">
+            <div v-for="(item, index) in tasks">
+                <div>
+                    <span>{{item.name}}</span>
+                    <button v-if="item.finish">達成済み！</button>
+                    <button v-else v-on:click="great(item,index)">出来た！</button>
+                    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+                        class=""
+                        data-text="褒めて！"
+                        data-lang="ja"
+                        data-count="horizonatal"
+                        data-show-count="false">
+                        褒めてもらう
+                    </a>
+                </div>
+            </div>
+            <input type="text" v-model="addtask" value="tet">
+            <button v-on:click="addTask">追加する</button>
+            <button v-on:click="delAllTask">リセット</button>
+        </div>
+    </section>
+</body>
+<script>
+    var vm = new Vue({
+        el: '#tasks-area',
+        data() {
+            return{
+                tasks: [
+                    {name:'test', finish:0, del:0}
+                ],
+                json: '',
+                addtask:'aa',
+            }
+        },
+        mounted() {
+            this.tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        },
+        methods: {
+            great(item, index) {
+                alert(item.name + 'が完了しました！えらい！');
+                this.clearTask(index);
+            },
+            addTask() {
+                this.tasks.push(
+                    {id:this.tasks.length ,name: this.addtask, finish:0,del:0}
+                );
+                this.setITasks();
+            },
+            clearTask(index) {
+                this.tasks[index].finish = '1';
+                this.setITasks();
+            },
+            delTask(index) {
+                this.tasks[index].del = '1';
+                this.setITasks();
+            },
+            setITasks() {
+                localStorage.setItem('tasks', JSON.stringify(this.tasks));
+            },
+            delAllTask() {
+                this.tasks = [];
+            }
+        }
+    })
+</script>
+</html>
