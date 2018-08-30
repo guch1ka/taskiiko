@@ -1,0 +1,243 @@
+* {
+            box-sizing: border-box;
+       -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, code, img, span, li, ol, ul, fieldset, form, label, button, table, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: normal;
+    font-style: normal;
+    text-align: left;
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-family: 'Noto Sans Japanese', -apple-system,Segoe UI,Helvetica Neue,Hiragino Kaku Gothic ProN,meiryo,sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    word-wrap: normal;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 62.5%;
+}
+
+body {
+    background: #fff;
+    color: #444;
+    min-height: 100%;
+    position: relative;
+    height: auto;
+}
+
+body a {
+    color: #ccc;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+body a:hover {
+    color: #ccc;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    outline: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+input {
+    font-size: 1.4rem;
+}
+
+.area-base {
+    margin: 0 auto;
+    width: calc(100% - 32px);
+    max-width: 800px;
+}
+
+.area-ttl {
+    background: #bbb;
+    background:    -moz-linear-gradient(40deg, #aaa, #ccc);
+    background: -webkit-linear-gradient(40deg, #aaa, #ccc); ;
+    background:         linear-gradient(40deg, #aaa, #ccc); ;
+    padding: 16px 16px 46px;
+}
+
+.area-task {
+    margin: -40px auto 0;
+}
+
+.bar-task {
+    box-shadow: 0 0 6px rgba(0, 0, 0,0.2);
+    background: #fff;
+    position: relative;
+    padding: 16px 16px 16px 46px;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 64px;
+}
+
+.bar-task::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background: rgb(177, 182, 207);
+}
+.nonetask {
+    background: #eee;
+    color: #999;
+}
+.nonetask.bar-task::before {
+    background: #ccc;
+}
+.bar-task-none {
+    box-shadow: 0 0 6px rgba(0, 0, 0,0.2);
+    background: #fff;
+    padding: 16px;
+    margin: 10px 0 0 0;
+}
+
+.finishtask.bar-task::before {
+    background: rgb(207, 201, 189);
+}
+
+.btn-reset {
+    margin: 8px 0 0 auto;
+}
+
+.btn-base {
+    padding: 4px 16px;
+    border-radius: 8px;
+    display: block;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: #aaa;
+    color: #444;
+}
+
+.btn-base:hover {
+    background: #ccc;
+}
+
+.txt-deltask {
+    text-decoration: line-through;
+}
+
+.area-itembtn {
+    display: flex;
+}
+
+.icon-del {
+    width: 24px;
+    height: 24px;
+    fill: #ccc;
+    margin: 0 0 0 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.icon-del:hover {
+    fill: #888;
+}
+
+.d-fix-b {
+    background: #ccc;
+    position: fixed;
+    bottom: 0;
+    padding: 8px 0;
+    border-top: #ccc solid 1px;
+    width: 100%;
+    text-align: center;
+}
+
+.area-addtask {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.input-addtask {
+    border: #999 solid 1px;
+    border-radius: 8px;
+    padding: 8px 16px;
+    width: 30%;
+    min-width: 230px;
+}
+
+.btn-addtask {
+    margin: 0 0 0 8px;
+}
+
+.area-f {
+    margin: 0 0 60px 0;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.btn-twitter {
+    padding: 4px 16px;
+    border-radius: 8px;
+    display: block;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: rgb(165, 186, 214);
+    color: #fff;
+    margin: 0 0 0 8px;
+}
+
+.txt-great {
+    font-weight: 600;
+}
+
+.d-modal {
+    position: fixed;
+    top: 0;
+    background: #ccc;
+    width: 100%;
+}
+
+.bar-modal {
+    display: flex;
+    padding: 8px 16px;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 1s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
